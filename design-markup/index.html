@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        BetBright | Design Markup
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <link rel="stylesheet" type="text/css" href="../css/design-markup.css?version=1">
+</head>
+<body>
+    <div class="logo"><a href="../"><img src="../images/betbright.jpg"></a></div>
+    <div class="design-markup-container">
+        <div class="flipper" id="flipper">
+            <div class="corner-ribbon-wrapper">
+                <div class="corner-ribbon">NEW</div>
+            </div>
+            <div class="front">
+                <div class="front-content">
+                    <section id="left">
+                        <div class="image-container">
+                            <div class="image"><img src="../images/power_poker.png" width="300" height="250" alt="Aces And Faces Power Poker"></div>
+                        </div>
+                    </section>
+                    <section id="right">
+                        <div class="text-conainer">
+                            <div class="bonus">
+                                <div class="title1">BETBRIGHT CASINO</div>
+                                <div class="title2"><span>&#163;</span> 1000 BONUS</div>
+                            </div>
+                            <div class="">
+                                <h4>JOIN</h4>
+                                <p>Open an account with us, It takes just a few minutes</p>
+                            </div>
+                            <div class="">
+                                <h4>DEPOSIT</h4>
+                                <p>Place a single bet up to <span>&#163;</span>30 on any sport in our Sportsbook</p>
+                            </div>
+                            <div class="button-container front-side">
+                                <input type="button" class="button button1" id="TC" value="Ts & Cs" onClick="flipContainer();">
+                                <input type="button" class="button button2" id="TC" value="FIND OUT MORE">
+                                <input type="button" class="button button3" id="TC" value="JOIN NOW">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="back">
+                <div class="terms-content">
+                    <div class="bonus">
+                        <div class="title1">CASINO BONUS</div>
+                    </div>
+                    <div class="scrollbox">
+                        <h4>Terms & Conditions</h4>
+                        <p class="scroll-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ante elit, porttitor placerat sagittis quis, aliquam a lectus. Aenean bibendum volutpat orci, ac consequat risus consectetur quis. Nulla id tellus purus, a pretium quam. Morbi a lorem lorem, vitae fringilla neque. Suspendisse lacinia interdum tellus ut rhoncus. Ut eu dui lorem. Vestibulum a nisi orci. Proin vulputate bibendum dolor, eget gravida ipsum dictum sed. Aliquam ut libero risus, at sollicitudin ante. Nunc arcu magna, tincidunt a fringilla vel, tincidunt et tortor. Nunc eu commodo lacus. Phasellus at lacus vitae nibh vestibulum porta. Proin eget justo id metus varius tristique non blandit augue. Vivamus varius nisl in mi consequat fermentum. Curabitur mollis pellentesque elit id gravida. Vivamus leo metus, posuere non bibendum vel, ultricies id risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor condimentum eros, malesuada convallis arcu fermentum at. Integer viverra luctus velit at luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce et enim metus. Maecenas a enim ligula. Pellentesque sed odio nisi. Praesent ac nisi dolor, ut congue velit. Maecenas laoreet, turpis nec posuere scelerisque, velit ligula porta purus, ut tincidunt dolor mauris ut ligula. Nam quis libero rhoncus dui posuere interdum ut at magna. Morbi fermentum laoreet risus, eget ornare velit consequat ut. Suspendisse potenti.</p>
+                    </div>
+                    <div class="button-container back-side">
+                        <input type="button" class="button button1" id="TC" value="Back" onClick="flipContainer();">
+                        <input type="button" class="button button3" id="TC" value="JOIN NOW">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        flipContainer = (pos) => {
+            const card = document.getElementById('flipper');
+            card.classList.toggle('flipped');
+        }
+    </script>
+</body>
+
+</html>

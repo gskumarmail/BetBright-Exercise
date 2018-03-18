@@ -1,0 +1,402 @@
+/****************************
+* design-markup css file
+* This file can be used for banner content with flipper animation
+* Handle all the styles for design markup
+* Support Responsive mode mobile & small screen
+****************************/
+
+
+/* @body style common for entire page */
+
+body {
+    padding: 1.5em;
+    background: #f5f5f5;
+    font-family: sans-serif;
+    color: #555;
+}
+
+
+/* @design-markup-container class for main container */
+
+.design-markup-container {
+    width: 800px;
+    height: 250px;
+    position: relative;
+    perspective: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+/* @flipper class for inner flipper container, It handles flip animation for the container */
+
+.flipper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 90;
+}
+
+
+/* @front & back class for front side content and back side content and initially hidden both */
+
+.front,
+.back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* @front class for default styling on loading the page */
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    width: 100%;
+}
+
+
+/* @back class for initially hidden to back side content */
+
+.back {
+    transform: rotateY(180deg);
+    width: 100%;
+    background: white;
+}
+
+
+/* @flipped class for rotate flipper container to back and front */
+
+.design-markup-container .flipper.flipped {
+    transform: rotateY(-180deg);
+}
+
+
+/* @bonus class for title container for banner heading */
+
+.bonus {
+    color: #0e8bb5;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* @title1 class for banner title 1 */
+
+.bonus .title1 {
+    font-size: 20px;
+}
+
+
+/* @title2 class for banner title 2 */
+
+.bonus .title2 {
+    font-size: 29px;
+}
+
+
+/* @button-container class for banner all the buttons */
+
+.button-container {
+    margin-top: 5px;
+}
+
+
+/* Button color change on hover*/
+
+.button:hover {
+    background-color: #CCC;
+}
+
+
+/* Tearm & Condition color change on hover*/
+
+.button1:hover {
+    background: url(../images/refresh.svg) no-repeat;
+    background-position: 9px 8px;
+    background-size: 16px 16px;
+    background-color: #CCC;
+}
+
+
+/* @terms-content class for terms and condition in back side banner */
+
+.terms-content {
+    margin: 10px;
+}
+
+
+/* @text-container class for right side content of the banner */
+
+.text-conainer {
+    margin-left: 320px;
+}
+
+
+/* @button class for handling all the button styles */
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: #555;
+    padding: 7px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
+/* Background Gray color for ts & cs and find out more buttons */
+
+.button1,
+.button2 {
+    background-color: #e7e7e7;
+}
+
+
+/* Background Yellow color for join now button */
+
+.button3 {
+    background-color: #febe10;
+}
+
+.button:focus {
+    outline: none;
+}
+
+
+/* @scrollbox class to handle terms and condition content on back side container 
+It also handle the vertical scroll and fade-in to the bottom of the content */
+
+.scrollbox {
+    overflow-y: auto;
+    height: 130px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    -webkit-mask-image: -webkit-gradient(linear, left 70%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+}
+
+
+/* -webkit-scrollbar adding background color for scroll bar */
+
+.scrollbox::-webkit-scrollbar {
+    width: 5px;
+    background-color: #cccccc;
+}
+
+
+/* -webkit-scrollbar-thumb adding background color for scroll bar thumb*/
+
+.scrollbox::-webkit-scrollbar-thumb {
+    background-color: #0e8bb5;
+    border-radius: 10px;
+}
+
+
+/* overflow auto given to fit image and content in the front container */
+
+.front-content {
+    overflow: auto
+}
+
+
+/* float left  given to set image left side of front container */
+
+.image-container {
+    float: left;
+}
+
+h4 {
+    margin: 0;
+}
+
+
+/* apply custom styles for <p> to front container paragraph text */
+
+p {
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+
+/* apply custom styles for term and conditions content to the back side container */
+
+p.scroll-content {
+    text-align: left;
+    line-height: 1.3;
+    padding-right: 5px;
+}
+
+
+/* @corner-ribbon-wrapper class for adding ribbon on the right side corner */
+
+.corner-ribbon-wrapper {
+    width: 172px;
+    height: 208px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* @corner-ribbon class for setting ribbon on the right side corner with sticker mode */
+
+.corner-ribbon {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    font: bold 24px Sans-Serif;
+    text-align: center;
+    -webkit-transform: rotate(45deg);
+    position: relative;
+    padding: 8px 0;
+    left: -10px;
+    top: 11px;
+    width: 271px;
+    background-color: #febe10;
+    color: #000000;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    /* Safari browser fix */
+    opacity: 1;
+    transition: opacity 1s, visibility 1s;
+}
+
+
+
+/* Safari browser fix */
+
+.flipped .corner-ribbon {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+
+/* @media query to handle when the screen size goes below 600px the banner getting resize. 
+   If the browser window is 600px or smaller, the banner will be resize 
+*/
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    .logo {
+        text-align: center;
+    }
+    .design-markup-container {
+        width: 400px;
+        height: 560px;
+    }
+    .flipper {
+        height: 560px;
+    }
+    .text-conainer {
+        margin-left: 0;
+        margin: 15px;
+    }
+    .button {
+        padding: 7px 45px;
+    }
+    .back-side .button {
+        margin-top: 10px;
+        padding: 7px 63px;
+    }
+    .front-side .button3 {
+        min-width: 363px;
+        margin-top: 10px;
+    }
+    .image>img {
+        width: 400px;
+        margin-bottom: 10px;
+    }
+    .corner-ribbon-wrapper {
+        z-index: 10;
+    }
+    .scrollbox {
+        height: 405px;
+    }
+}
+
+
+/* @media query to handle when the screen size goes below 480px the banner getting resize. 
+   If the browser window is 480px or smaller, the banner will be resize 
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .logo {
+        text-align: center;
+    }
+    .design-markup-container {
+        width: 338px;
+        height: 590px;
+    }
+    .flipper {
+        height: 590px;
+    }
+    .button {
+        padding: 7px 30px;
+    }
+    .back-side .button {
+        margin-top: 10px;
+        padding: 7px 48px;
+    }
+    .front-side .button3 {
+        min-width: 303px;
+        margin-top: 10px;
+    }
+    .image>img {
+        width: 338px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* @media query to handle when the screen size goes below 320px the banner getting resize.
+   If the browser window is 320px or smaller, the banner will be resize 
+*/
+
+@media screen and (max-width: 320px) {
+    .logo {
+        text-align: center;
+    }
+    .design-markup-container {
+        width: 280px;
+        height: 600px;
+    }
+    .flipper {
+        height: 600px;
+    }
+    .button {
+        padding: 7px 15px;
+    }
+    .back-side .button {
+        margin-top: 10px;
+        padding: 7px 48px;
+    }
+    .front-side .button3 {
+        min-width: 243px;
+        margin-top: 10px;
+    }
+    .image>img {
+        width: 280px;
+        margin-bottom: 10px;
+    }
+}

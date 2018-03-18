@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        BetBright | JS Exercise
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/js-exercise.css">
+</head>
+
+<body>
+    <div class="logo"><a href="../"><img src="../images/betbright.jpg"></a></div>
+    <div class="tabs">
+        <input name="tabs" id="tabs1" type="radio" value="cow" onclick="loadImages(this);">
+        <section>
+            <h1>
+          <label for="tabs1">Cow</label>
+        </h1>
+            <div>
+                <div id="cow"></div>
+            </div>
+        </section>
+        <input name="tabs" id="tabs2" type="radio" value="dog" onclick="loadImages(this);">
+        <section>
+            <h1>
+          <label for="tabs2">Dog</label>
+        </h1>
+            <div>
+                <div id="dog"></div>
+            </div>
+        </section>
+        <input name="tabs" id="tabs3" type="radio" value="giraffe" onclick="loadImages(this);">
+        <section>
+            <h1>
+          <label for="tabs3">Giraffe</label>
+        </h1>
+            <div>
+                <div id="giraffe"></div>
+            </div>
+        </section>
+    </div>
+    <div id="light-box" class="light-box-modal">
+        <span class="lightbox-close">&#10005;</span>
+        <img class="lightbox-modal-content" id="light-box-image">
+        <div id="lightbox-image-caption"></div>
+    </div>
+    <script src="../js/js-exercise.js"></script>
+</body>
+
+</html>

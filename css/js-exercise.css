@@ -1,0 +1,289 @@
+/****************************
+* js-exercise css file
+* This file can be used for flicker image list container
+* It handles tabs with responsive mode
+* It handles image light box styles
+* Support Responsive mode mobile & small screen
+****************************/
+
+
+/* @body style common for entire page */
+
+body {
+    padding: 1.5em;
+    background: #f5f5f5;
+    font-family: sans-serif;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* @image-content class for image style, It handles image width & height,shadow and transition*/
+
+.image-content {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* apply opacity on hover state on the image */
+
+.image-content:hover {
+    opacity: 0.7;
+}
+
+
+/* @light-box-modal class handles bacground and stack order for the image with fixed position */
+
+.light-box-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+/* @lightbox-modal-content class to handle the image in light box model container */
+
+.lightbox-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border: 5px solid #f5f5f5;
+    border-radius: 10px;
+}
+
+
+/* @lightbox-image-caption class for image title on the light box model container */
+
+#lightbox-image-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+/* apply animation for image title on the light box model container when loading image on zoom state */
+
+.lightbox-modal-content,
+#lightbox-image-caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+
+/* @keyframes for image title and image on zoom state */
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* @lightbox-close to handle the close icon in image light box */
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 3px solid;
+    border-radius: 25px;
+    width: 23px;
+    text-align: center;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* tabs handle to load selected images from the flicker response 
+ * tabs contain three buttons like cow,dog and giraffe
+*/
+
+.tabs {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+/* tabs input radio can be used for selcting state */
+
+.tabs>input {
+    display: none;
+}
+
+
+/* tabs h1 handle tabs text */
+
+.tabs>section>h1 {
+    float: left;
+    box-sizing: border-box;
+    margin: 0;
+    margin-right: 2px;
+    overflow: hidden;
+    font-size: 1em;
+    font-weight: normal;
+    background-color: #eee;
+    border: none;
+}
+
+
+/* label text for three tabs 
+ * apply style for default label text
+ * handle user selected state
+*/
+
+.tabs>section>h1>label {
+    display: block;
+    width: 150px;
+    padding: 8px;
+    border: none font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.0625);
+    background-color: #0e8bb5;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* tab content containers for three tabs 
+ * apply style for all the container
+*/
+
+.tabs>section>div {
+    position: relative;
+    z-index: 1;
+    float: right;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 2.5em 0 0 -100%;
+    padding: 0.5em 0.75em;
+    background: #fff;
+    font-size: 16px;
+}
+
+
+/* handles input radio button selected state
+ * apply styles for particular tab based on the selection
+*/
+
+.tabs>input:checked+section>h1>label {
+    position: relative;
+    z-index: 2;
+    background-color: #febe10 !important;
+    color: #555;
+    font-weight: 600;
+}
+
+
+/* handles input radio button un selected state
+ * apply styles for all the tabs which is not selected
+*/
+
+.tabs>input:not(:checked)+section>div {
+    display: none;
+}
+
+
+/* Responsive mode for mobile or smaller screen
+ * @media query to handle when the screen size goes below 768px the tab container getting resize.
+ * If the browser window is 768px or smaller, the tab container will be resize 
+*/
+
+@media screen and (max-width: 768px) {
+    .logo {
+        text-align: center;
+    }
+    .lightbox-modal-content {
+        width: 100%;
+    }
+    .tabs>section>div {
+        position: relative;
+        display: block;
+        float: left;
+        box-sizing: border-box;
+        padding: 0.5em 0.75em;
+        border: none;
+        font-size: 14px;
+        background: #fff;
+        width: 100%;
+        margin: 0;
+    }
+    .tabs>section>div>div {
+        text-align: center;
+    }
+    .tabs>input:checked+section>h1 {
+        position: relative;
+        display: block;
+    }
+    .tabs>section>h1 {
+        width: 100%;
+        background-color: #eee;
+        border: none;
+        padding: 0;
+        border-bottom: 1px solid #fff;
+    }
+    .tabs>section>h1>label {
+        cursor: pointer;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 14px;
+        transition: 0.4s;
+    }
+    img {
+        width: 170px;
+    }
+}
